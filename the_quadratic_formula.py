@@ -1,26 +1,26 @@
 # Import math and complex math libraries
-# Also import the module containing codes that returns the discriminant
+# Import modules containing codes that returns the discriminant and vertex
 
 import math
 import cmath
-import the_quadratic_discriminant
+from the_quadratic_discriminant import discriminant
 from vertex import the_vertex		
 
 def quadratic_formula():
 	"""Model the quadratic formula"""
 	while True:
-		print("Enter 'q' at anytime to quit ")
-		
-		a = input('Enter a (quadratic term): ')
-		if a == 'q':
+		show_messages()
+
+		a = input('Enter a : ')
+		if a == 'q' or a == 'Q':
 			break
 
-		b = input('Enter b (linear term): ')
-		if b == 'q':
+		b = input('Enter b : ')
+		if b == 'q' or b == 'Q':
 			break
 
-		c = input('Enter c (constant term): ')
-		if c == 'q':
+		c = input('Enter c : ')
+		if c == 'q' or c == 'Q':
 			break
 
 		#Handle errors from user input and continue executing program
@@ -34,7 +34,7 @@ def quadratic_formula():
 
 			#if the discriminant is non-negative, it will have real roots and 
 				# will require python's math library
-			d = the_quadratic_discriminant.discriminant(a, b, c)
+			d = discriminant(a, b, c)
 
 			if d >= 0:
 				x_1 = (-b + math.sqrt(d))/(2*a)
@@ -54,6 +54,12 @@ def quadratic_formula():
 		except (ValueError, ArithmeticError):
 			print("\nNot a quadratic equation!\n")
 			continue
+
+def show_messages():
+	"""Display helpful messages."""
+	quit_message = "Enter 'q' at anytime to quit."
+	standard_form = "Standard form of quadratic equation is ax^2 + bx + c = 0."
+	print(f"\n{quit_message}\n{standard_form}\n")
 
 
 
