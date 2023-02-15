@@ -1,4 +1,4 @@
-#discriminant is b^2 - 4ac
+# Discriminant is b^2 - 4ac
 
 def discriminant(first_term, second_term, third_term):
 	"""Return the value of the discriminant"""
