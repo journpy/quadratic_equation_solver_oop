@@ -56,8 +56,11 @@ class QuadraticFunctions:
 			x_1 = (-self.b + cmath.sqrt(d))/(2*self.a)
 			x_2 = (-self.b - cmath.sqrt(d))/(2*self.a)
 
-		print(f"\nThe roots are {x_1} and {x_2}\nDiscriminant: "
-			f"{d}\nVertex: {v}\nAxis of Symmetry: x = {v[0]}\n")
+		print(
+			f'''
+			\nThe roots are {x_1} and {x_2}\nDiscriminant: {d}\nVertex: {v}\nAxis of Symmetry: x = {v[0]}
+			'''
+			)
 
 
 	def style_graph(self):
